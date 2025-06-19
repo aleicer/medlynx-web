@@ -1,26 +1,286 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colores personalizados para MedLinx */
+  --color-primary: #3a7ca5;
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0efff;
+  --color-primary-200: #b9dfff;
+  --color-primary-300: #7cc8ff;
+  --color-primary-400: #36b0ff;
+  --color-primary-500: #0c98f1;
+  --color-primary-600: #0077ce;
+  --color-primary-700: #0060a7;
+  --color-primary-800: #05508a;
+  --color-primary-900: #0a4372;
+  --color-primary-950: #072a4b;
+
+  --color-secondary: #a8d8b9;
+  --color-secondary-50: #f0fdf4;
+  --color-secondary-100: #dcfce7;
+  --color-secondary-200: #bbf7d0;
+  --color-secondary-300: #86efac;
+  --color-secondary-400: #4ade80;
+  --color-secondary-500: #22c55e;
+  --color-secondary-600: #16a34a;
+  --color-secondary-700: #15803d;
+  --color-secondary-800: #166534;
+  --color-secondary-900: #14532d;
+  --color-secondary-950: #052e16;
+
+  --color-accent: #8a6fbf;
+  --color-accent-50: #faf7ff;
+  --color-accent-100: #f4edff;
+  --color-accent-200: #ebdeff;
+  --color-accent-300: #dcc4ff;
+  --color-accent-400: #c89bff;
+  --color-accent-500: #b26eff;
+  --color-accent-600: #a347ff;
+  --color-accent-700: #9333ea;
+  --color-accent-800: #7c2d12;
+  --color-accent-900: #581c87;
+  --color-accent-950: #3b0764;
+
+  --color-text-primary: #2f3e46;
+  --color-text-secondary: #526777;
+  --color-background: #f7f9fa;
+  --color-background-card: #ffffff;
+
+  /* Espaciado personalizado */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+
+  /* Radios de borde */
+  --radius: 0.5rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Sombras personalizadas */
+  --shadow-soft: 0 2px 15px -3px rgb(0 0 0 / 0.07), 0 10px 20px -2px rgb(0 0 0 / 0.04);
+  --shadow-medium: 0 4px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+  --shadow-hard: 0 10px 40px -10px rgb(0 0 0 / 0.15), 0 2px 10px -2px rgb(0 0 0 / 0.04);
+
+  /* Animaciones */
+  --animate-fade-in: fade-in 0.5s ease-in-out;
+  --animate-slide-up: slide-up 0.3s ease-out;
+  --animate-slide-down: slide-down 0.3s ease-out;
+  --animate-scale-in: scale-in 0.2s ease-out;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Keyframes para animaciones */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Estilos base */
+* {
+  border-color: #e5e7eb;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f9fa;
+  color: #2f3e46;
+}
+
+/* Utilidades personalizadas */
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .glass-effect {
+    background: rgb(255 255 255 / 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgb(255 255 255 / 0.2);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #3a7ca5 #f7f9fa;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f7f9fa;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #3a7ca5;
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(58 124 165 / 0.8);
+  }
+
+  .animate-fade-in {
+    animation: var(--animate-fade-in);
+  }
+
+  .animate-slide-up {
+    animation: var(--animate-slide-up);
+  }
+
+  .animate-slide-down {
+    animation: var(--animate-slide-down);
+  }
+
+  .animate-scale-in {
+    animation: var(--animate-scale-in);
+  }
+}
+
+/* Componentes personalizados */
+@layer components {
+  .medication-card {
+    background: rgb(255 255 255 / 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgb(229 231 235 / 0.5);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    transition: all 0.2s;
+  }
+
+  .medication-card:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transform: translateY(-4px);
+  }
+
+  .badge-invima {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background: rgb(58 124 165 / 0.1);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #3a7ca5;
+    border: 1px solid rgb(58 124 165 / 0.2);
+  }
+
+  .badge-prescription {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background: rgb(138 111 191 / 0.1);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #8a6fbf;
+    border: 1px solid rgb(138 111 191 / 0.2);
+  }
+
+  .badge-presentation {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background: rgb(168 216 185 / 0.1);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #a8d8b9;
+    border: 1px solid rgb(168 216 185 / 0.2);
+  }
+
+  .loading-spinner {
+    animation: spin 1s linear infinite;
+    border-radius: 50%;
+    border: 2px solid #d1d5db;
+    border-top-color: #3a7ca5;
+  }
+
+  .loading-skeleton {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    background: #e5e7eb;
+    border-radius: 0.375rem;
+  }
+
+  .tooltip {
+    position: absolute;
+    z-index: 50;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    color: white;
+    background: #111827;
+    border-radius: 0.375rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+}
+
+/* Estilos de accesibilidad */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #3a7ca5;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body {
+    color: black;
+    background: white;
+  }
 }
