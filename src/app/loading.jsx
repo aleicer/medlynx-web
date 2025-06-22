@@ -1,3 +1,7 @@
+import {PropagateLoader} from "react-spinners"
+
 export default function Loading() {
-  return null
+  return (
+    <PropagateLoader/>
+  )
 }

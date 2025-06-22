@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Pill, Home, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import {usePathname} from "next/navigation"
+import {Pill, Home, Search} from "lucide-react"
+import {Button} from "@/components/ui/button"
 
 export function Navigation() {
   const pathname = usePathname()
@@ -14,9 +14,9 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="bg-[#3a7ca5] p-2 rounded-lg group-hover:scale-105 transition-transform">
-              <Pill className="h-6 w-6 text-white" />
+              <Pill className="h-6 w-6 text-white"/>
             </div>
-            <span className="text-xl font-bold text-[#3a7ca5]">MedLinx</span>
+            <span className="text-xl font-bold text-[#3a7ca5]">MedLynx</span>
           </Link>
 
           <div className="flex items-center gap-4">
@@ -29,7 +29,7 @@ export function Navigation() {
                     : "text-[#2f3e46] hover:text-[#3a7ca5] hover:bg-[#3a7ca5]/10"
                 }
               >
-                <Home className="h-4 w-4 mr-2" />
+                <Home className="h-4 w-4 mr-2"/>
                 Inicio
               </Button>
             </Link>
@@ -42,7 +42,7 @@ export function Navigation() {
                     : "text-[#2f3e46] hover:text-[#3a7ca5] hover:bg-[#3a7ca5]/10"
                 }
               >
-                <Search className="h-4 w-4 mr-2" />
+                <Search className="h-4 w-4 mr-2"/>
                 Buscador
               </Button>
             </Link>
