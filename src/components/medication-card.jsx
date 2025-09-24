@@ -5,6 +5,7 @@ import {Button} from "@/components/ui/button"
 import {Pill} from "lucide-react"
 
 export function MedicationCard({medication, onSelect}) {
+  console.log(medication)
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow bg-blue-50/80 h-[250px] flex flex-col">
       <CardContent className="p-4 flex-1 overflow-hidden">
