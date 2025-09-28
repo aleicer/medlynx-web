@@ -1,95 +1,101 @@
-import {Pill, Mail, Phone, MapPin} from "lucide-react"
+import { Mail, MapPin, Phone, Pill } from "lucide-react"
+
+const utilityLinks = [
+  { label: "Inicio", href: "/" },
+  { label: "Buscador", href: "/search" },
+  { label: "Acerca de", href: "#" },
+  { label: "Contacto", href: "#" },
+]
+
+const resourceLinks = [
+  { label: "INVIMA", href: "#" },
+  { label: "Datos.gov.co", href: "#" },
+  { label: "Ministerio de Salud", href: "#" },
+  { label: "Soporte", href: "#" },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-text-secondary text-white py-12 px-4">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="relative mt-24 border-t border-white/70 bg-white/90">
+      <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-primary/10 via-white to-transparent" aria-hidden />
+
+      <div className="container relative z-10 mx-auto max-w-6xl px-6 py-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.3fr_repeat(3,1fr)]">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="bg-primary p-2 rounded-lg">
-                <Pill className="h-6 w-6 text-white"/>
+            <div className="flex items-center gap-3">
+              <span className="rounded-full bg-primary/15 p-3 text-primary">
+                <Pill className="h-6 w-6" />
+              </span>
+              <div className="flex flex-col leading-tight">
+                <span className="text-xs font-semibold uppercase tracking-[0.35em] text-primary/70">Med</span>
+                <span className="text-xl font-semibold text-primary">
+                  Lynx<span className="pl-1 text-secondary">+</span>
+                </span>
               </div>
-              <span className="text-xl font-bold">MedLynx</span>
             </div>
-            <p className="text-gray-300 leading-relaxed">
-              Tu fuente confiable de información sobre medicamentos en Colombia.
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-text-secondary">
+              Informacion confiable, visualizaciones claras y analisis impulsados por IA para optimizar la prescripcion y el acceso a medicamentos en Colombia.
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Enlaces Útiles</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a href="/search" className="hover:text-white transition-colors">
-                  Buscador
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Acerca de
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Contacto
-                </a>
-              </li>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Navegacion</h3>
+            <ul className="mt-5 space-y-3 text-sm text-text-secondary">
+              {utilityLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="transition-colors hover:text-primary">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Recursos</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  INVIMA
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Datos.gov.co
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Ministerio de Salud
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Ayuda
-                </a>
-              </li>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Recursos</h3>
+            <ul className="mt-5 space-y-3 text-sm text-text-secondary">
+              {resourceLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="transition-colors hover:text-primary">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
-            <div className="space-y-3 text-gray-300">
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4"/>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Contacto</h3>
+            <ul className="mt-5 space-y-4 text-sm text-text-secondary">
+              <li className="flex items-center gap-3">
+                <Mail className="h-4 w-4 text-primary" />
                 <span>info@medlynx.co</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4"/>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-4 w-4 text-primary" />
                 <span>+57 (321) 494-6645</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4"/>
-                <span>Bogotá, Colombia</span>
-              </div>
-            </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span>Bogota, Colombia</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+        <div className="mt-16 flex flex-col gap-4 border-t border-white/70 pt-8 text-sm text-text-secondary sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; 2025 MedLynx. Todos los derechos reservados.</p>
+          <div className="flex gap-6">
+            <a href="#" className="transition-colors hover:text-primary">
+              Terminos
+            </a>
+            <a href="#" className="transition-colors hover:text-primary">
+              Privacidad
+            </a>
+            <a href="#" className="transition-colors hover:text-primary">
+              Seguridad
+            </a>
+          </div>
         </div>
       </div>
     </footer>
