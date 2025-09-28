@@ -2,48 +2,48 @@
 
 @theme {
     /* Colores personalizados para MedLynx */
-    --color-primary: #3a7ca5;
-    --color-primary-50: #f0f7ff;
-    --color-primary-100: #e0efff;
-    --color-primary-200: #b9dfff;
-    --color-primary-300: #7cc8ff;
-    --color-primary-400: #36b0ff;
-    --color-primary-500: #0c98f1;
-    --color-primary-600: #0077ce;
-    --color-primary-700: #0060a7;
-    --color-primary-800: #05508a;
-    --color-primary-900: #0a4372;
-    --color-primary-950: #072a4b;
+    --color-primary: #133e87;
+    --color-primary-50: #f3f6ff;
+    --color-primary-100: #e5edff;
+    --color-primary-200: #cbd9ff;
+    --color-primary-300: #a2bdff;
+    --color-primary-400: #7d9eff;
+    --color-primary-500: #557dff;
+    --color-primary-600: #3d63e6;
+    --color-primary-700: #2f4fc4;
+    --color-primary-800: #253d96;
+    --color-primary-900: #1a2a63;
+    --color-primary-950: #101a3d;
 
-    --color-secondary: #a8d8b9;
-    --color-secondary-50: #f0fdf4;
-    --color-secondary-100: #dcfce7;
-    --color-secondary-200: #bbf7d0;
-    --color-secondary-300: #86efac;
-    --color-secondary-400: #4ade80;
-    --color-secondary-500: #22c55e;
-    --color-secondary-600: #16a34a;
-    --color-secondary-700: #15803d;
-    --color-secondary-800: #166534;
-    --color-secondary-900: #14532d;
-    --color-secondary-950: #052e16;
+    --color-secondary: #3a86ff;
+    --color-secondary-50: #eff6ff;
+    --color-secondary-100: #dbe9ff;
+    --color-secondary-200: #b7d4ff;
+    --color-secondary-300: #8cb6ff;
+    --color-secondary-400: #5e93ff;
+    --color-secondary-500: #3a86ff;
+    --color-secondary-600: #1f6fe3;
+    --color-secondary-700: #1a56b9;
+    --color-secondary-800: #184696;
+    --color-secondary-900: #143978;
+    --color-secondary-950: #0c234a;
 
-    --color-accent: #8a6fbf;
-    --color-accent-50: #faf7ff;
-    --color-accent-100: #f4edff;
-    --color-accent-200: #ebdeff;
-    --color-accent-300: #dcc4ff;
-    --color-accent-400: #c89bff;
-    --color-accent-500: #b26eff;
-    --color-accent-600: #a347ff;
-    --color-accent-700: #9333ea;
-    --color-accent-800: #7c2d12;
-    --color-accent-900: #581c87;
-    --color-accent-950: #3b0764;
+    --color-accent: #5bc0f8;
+    --color-accent-50: #effaff;
+    --color-accent-100: #d9f3ff;
+    --color-accent-200: #b9e8ff;
+    --color-accent-300: #8fdcff;
+    --color-accent-400: #65d0ff;
+    --color-accent-500: #5bc0f8;
+    --color-accent-600: #2ca0dc;
+    --color-accent-700: #1d7daa;
+    --color-accent-800: #1d6285;
+    --color-accent-900: #194f6c;
+    --color-accent-950: #0f3145;
 
-    --color-text-primary: #2f3e46;
-    --color-text-secondary: #526777;
-    --color-background: #f7f9fa;
+    --color-text-primary: #0f1f3c;
+    --color-text-secondary: #4c5f7a;
+    --color-background: #f6f8fc;
     --color-background-card: #ffffff;
 
     /* Espaciado personalizado */
@@ -57,9 +57,9 @@
     --radius-sm: calc(var(--radius) - 4px);
 
     /* Sombras personalizadas */
-    --shadow-soft: 0 2px 15px -3px rgb(0 0 0 / 0.07), 0 10px 20px -2px rgb(0 0 0 / 0.04);
-    --shadow-medium: 0 4px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
-    --shadow-hard: 0 10px 40px -10px rgb(0 0 0 / 0.15), 0 2px 10px -2px rgb(0 0 0 / 0.04);
+    --shadow-soft: 0 20px 40px -25px rgb(19 62 135 / 0.35), 0 10px 25px -15px rgb(15 31 60 / 0.2);
+    --shadow-medium: 0 30px 60px -25px rgb(19 62 135 / 0.45), 0 18px 35px -20px rgb(15 31 60 / 0.25);
+    --shadow-hard: 0 40px 80px -30px rgb(19 62 135 / 0.55), 0 22px 45px -25px rgb(15 31 60 / 0.3);
 
     /* Animaciones */
     --animate-fade-in: fade-in 0.5s ease-in-out;
@@ -117,18 +117,12 @@
 }
 
 body {
-    /*background: #f7f9fa;*/
-    /*color: #2f3e46;*/
-    /* Color de texto por defecto. Funciona bien con fondos claros */
     color: var(--color-text-primary);
-
-    /* Fondo con el nuevo degradado de 4 colores CLAROS */
-    /* Fijamos el fondo para que no se mueva con el scroll */
-    background: linear-gradient(160deg,
-    var(--color-primary-100), var(--color-primary-200), var(--color-secondary-200), var(--color-secondary-100)
-    ) fixed;
-
-    /* Aseguramos que el color de fondo cubra toda la pantalla */
+    background:
+        radial-gradient(circle at 20% 20%, rgb(85 125 255 / 0.15), transparent 45%),
+        radial-gradient(circle at 80% 10%, rgb(91 192 248 / 0.12), transparent 45%),
+        linear-gradient(180deg, #f7faff 0%, #eef3fb 50%, #f6f8fc 100%);
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
@@ -149,14 +143,15 @@ body {
     }
 
     .glass-effect {
-        background: rgb(255 255 255 / 0.95);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgb(255 255 255 / 0.2);
+        background: rgb(255 255 255 / 0.9);
+        backdrop-filter: blur(28px);
+        border: 1px solid rgb(19 62 135 / 0.08);
+        box-shadow: var(--shadow-soft);
     }
 
     .scrollbar-thin {
         scrollbar-width: thin;
-        scrollbar-color: #3a7ca5 #f7f9fa;
+        scrollbar-color: #2f4fc4 #eff2ff;
     }
 
     .scrollbar-thin::-webkit-scrollbar {
@@ -164,16 +159,16 @@ body {
     }
 
     .scrollbar-thin::-webkit-scrollbar-track {
-        background: #f7f9fa;
+        background: #eef2ff;
     }
 
     .scrollbar-thin::-webkit-scrollbar-thumb {
-        background-color: #3a7ca5;
+        background-color: #3d63e6;
         border-radius: 3px;
     }
 
     .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-        background-color: rgb(58 124 165 / 0.8);
+        background-color: rgb(61 99 230 / 0.8);
     }
 
     .animate-fade-in {
@@ -197,59 +192,59 @@ body {
 @layer components {
     .medication-card {
         background: rgb(255 255 255 / 0.95);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgb(229 231 235 / 0.5);
-        border-radius: 0.5rem;
-        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-        transition: all 0.2s;
+        backdrop-filter: blur(18px);
+        border: 1px solid rgb(19 62 135 / 0.08);
+        border-radius: 0.75rem;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .medication-card:hover {
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        transform: translateY(-4px);
+        box-shadow: var(--shadow-medium);
+        transform: translateY(-6px);
     }
 
     .badge-invima {
         display: inline-flex;
         align-items: center;
         border-radius: 9999px;
-        background: rgb(58 124 165 / 0.1);
-        padding: 0.25rem 0.5rem;
+        background: rgb(61 99 230 / 0.12);
+        padding: 0.25rem 0.6rem;
         font-size: 0.75rem;
-        font-weight: 500;
-        color: #3a7ca5;
-        border: 1px solid rgb(58 124 165 / 0.2);
+        font-weight: 600;
+        color: #2f4fc4;
+        border: 1px solid rgb(61 99 230 / 0.2);
     }
 
     .badge-prescription {
         display: inline-flex;
         align-items: center;
         border-radius: 9999px;
-        background: rgb(138 111 191 / 0.1);
-        padding: 0.25rem 0.5rem;
+        background: rgb(91 192 248 / 0.14);
+        padding: 0.25rem 0.6rem;
         font-size: 0.75rem;
-        font-weight: 500;
-        color: #8a6fbf;
-        border: 1px solid rgb(138 111 191 / 0.2);
+        font-weight: 600;
+        color: #1d7daa;
+        border: 1px solid rgb(91 192 248 / 0.25);
     }
 
     .badge-presentation {
         display: inline-flex;
         align-items: center;
         border-radius: 9999px;
-        background: rgb(168 216 185 / 0.1);
-        padding: 0.25rem 0.5rem;
+        background: rgb(148 180 255 / 0.16);
+        padding: 0.25rem 0.6rem;
         font-size: 0.75rem;
-        font-weight: 500;
-        color: #a8d8b9;
-        border: 1px solid rgb(168 216 185 / 0.2);
+        font-weight: 600;
+        color: #2f4fc4;
+        border: 1px solid rgb(148 180 255 / 0.3);
     }
 
     .loading-spinner {
         animation: spin 1s linear infinite;
         border-radius: 50%;
         border: 2px solid #d1d5db;
-        border-top-color: #3a7ca5;
+        border-top-color: #3d63e6;
     }
 
     .loading-skeleton {
@@ -276,7 +271,7 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-    outline: 2px solid #3a7ca5;
+    outline: 2px solid #2f4fc4;
     outline-offset: 2px;
 }
 
